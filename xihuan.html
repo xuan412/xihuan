@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url(./beijing2.png);
+            width: 1080px;
+            height: 620px;
+            background-size: cover; /* 这将使背景图片覆盖整个元素 */
+            background-repeat: no-repeat; /* 防止图片重复 */
+            background-position: center center; /* 将图片居中 */
+        }
+        .yinyue button{
+            margin-top: 15px;
+            margin-left: 1280px;
+            height: 30px;
+            width: 30px;
+            background-color: rgba(240, 248, 255, 0);
+            border: none;
+            background-size: cover;
+            background-image: url(./bofang.png); /* 设置按钮的背景图片 */
+            
+        }
+        .first{
+               margin-left: 270px; 
+               margin-top: 50px;
+        }
+       
+        
+        .first p{
+            color: rgb(255, 255, 255);
+            text-align: center;
+            margin-top: 10px;
+            font-family:'幼圆';
+            font-size: 27px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+       .b{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            margin-top: 10px;
+            
+       }
+       .b img{
+            width: 100px;
+            height: 100px;
+            margin: 0 50px; 
+
+            border-radius: 50px;
+            margin-bottom: 20px;
+
+       }
+       .gunneng{
+            margin-top: 30px; 
+            width: 1000px;
+            height: 300px;  
+            margin-left: 180px;
+            display: flex; /* 使用flex布局 */
+            justify-content: space-between; /* 在元素之间平均分配空间 */
+       }
+       .part1{
+        height: 270px;
+        background-image: url(part1.png); 
+        width: 200px;
+        background-size: cover;
+        border: 2px solid white;
+        background-position: center center;
+        border-radius: 20px; 
+        font-size: 30px;
+        color: #3fc2ff;
+        text-align: center;
+        writing-mode: vertical-rl;
+        font-family:'幼圆';
+        font-weight: bold;
+        
+
+       }
+       .part2{
+        height: 270px; 
+        background-image: url(part2.png); 
+        width: 200px;
+        background-size: cover;
+        border: 2px solid white;
+        background-position: center center;
+        border-radius: 20px;
+        font-size: 30px;
+        color: gold;
+        text-align: center;
+        writing-mode: vertical-rl;
+        font-family:'幼圆';
+        font-weight: bold;
+        
+       }
+       
+       .part3{
+        height: 270px; 
+        background-image: url(part3.png);  
+        width: 200px;
+        background-size: cover;
+        border: 2px solid white;
+        background-position: center center;
+        border-radius: 20px;
+        font-size: 30px;
+        color: fuchsia;
+        text-align: center;
+        writing-mode: vertical-rl;
+        font-family:'幼圆';
+        font-weight: bold;
+       }
+
+    .part4{
+        height: 270px; 
+        background-image: url(part4.png);  
+        width: 200px;
+        background-size: cover;
+        border: 2px solid white;
+        background-position: center center;
+        border-radius: 20px;
+        font-size: 30px;
+        color: hotpink;
+        text-align: center;
+        writing-mode: vertical-rl;
+        font-family:'幼圆';
+        font-weight: bold;
+       }
+    </style>
+</head>
+<body>
+    <div class="yinyue">
+        <!-- 移除按钮，因为现在通过鼠标移动触发 -->
+        <audio id="myAudio" src="./music.ogg"></audio>
+    </div>
+    <script>
+        // 获取音频元素
+        var audio = document.getElementById("myAudio");
+        var hasInteracted = false;
+
+        // 为页面添加点击事件监听器，处理首次交互
+        document.addEventListener("click", function() {
+            if (!hasInteracted) {
+                if (audio.paused) {
+                    audio.play().catch(error => {
+                        console.error('播放音频失败:', error);
+                    });
+                }
+                hasInteracted = true;
+            }
+        });
+
+        // 为 body 添加鼠标移动事件监听器
+        document.body.addEventListener("mousemove", function() {
+            if (hasInteracted && audio.paused) {
+                audio.play().catch(error => {
+                    console.error('播放音频失败:', error);
+                });
+            }
+        });
+    </script>
+
+        <div class="first">
+            
+            
+            <p>喜欢你</p>
+    
+            <div class="b">
+            <img src="./1.jpg" alt="" >
+            
+            <img src="./2.jpg" alt="">
+            </div>
+        
+        <p id="hours-passed"></p>
+        
+        
+        <script>
+            // 设置特定日期和时间（例如：2025年1月18日22点）
+            var specificDate = new Date('2025-01-18T22:00:00');
+    
+            // 获取当前日期和时间
+            var currentDate = new Date();
+    
+            // 计算时间差（以毫秒为单位）
+            var timeDiff = currentDate - specificDate;
+    
+            // 将时间差转换为小时数
+            var hours = Math.floor(timeDiff / (1000 * 60 * 60));
+    
+            // 将时间差转换为天数
+            var days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)+1);
+    
+            // 更新页面上的文本内容
+            document.getElementById('hours-passed').innerHTML = '现在是我们成为伴侣第'+days+'天，也是' + hours + '小时';
+        </script>
+        <p>愿我们共度这美好时光</p>
+        </div>
+
+        <div class="gunneng">
+            <button class="part1" onclick="window.open('part1.html', '_blank')"></button>
+            <button class="part2" onclick="window.open('part2.html', '_blank')"></button>
+            <button class="part3" onclick="window.open('part3.html', '_blank')"></button>
+            <button class="part4" onclick="window.open('part4.html', '_blank')"></button>
+        </div>
+</body>
+</html>
