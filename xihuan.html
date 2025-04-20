@@ -1,139 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- 增强viewport设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <title>纪念页面</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
+        :root {
+            --base-font-size: 16px;
+            --primary-color: #fff;
         }
-        body{
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
             background-image: url(./beijing2.png);
-            width: 1080px;
-            height: 620px;
-            background-size: cover; /* 这将使背景图片覆盖整个元素 */
-            background-repeat: no-repeat; /* 防止图片重复 */
-            background-position: center center; /* 将图片居中 */
-        }
-        .yinyue button{
-            margin-top: 15px;
-            margin-left: 1280px;
-            height: 30px;
-            width: 30px;
-            background-color: rgba(240, 248, 255, 0);
-            border: none;
             background-size: cover;
-            background-image: url(./bofang.png); /* 设置按钮的背景图片 */
-            
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
         }
-        .first{
-               margin-left: 270px; 
-               margin-top: 50px;
-        }
-       
+
         
-        .first p{
-            color: rgb(255, 255, 255);
-            text-align: center;
-            margin-top: 10px;
-            font-family:'幼圆';
-            font-size: 27px;
-            margin-bottom: 20px;
-            font-weight: bold;
+
+        .first {
+        width: 90%;
+        max-width: 800px;
+        margin: 0.5rem auto;
+        padding: 1.5rem;
+        display: flex;          /* 新增 */
+        flex-direction: column; /* 新增 */
+        align-items: center;    /* 新增 */
+        text-align: center;     /* 新增 */
         }
-       .b{
+
+        .first p {
+        color: var(--primary-color);
+        font-family: '幼圆', 'YouYuan', sans-serif;
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+         margin: 0.3rem 0;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+         width: 100%;           /* 新增 */
+        }
+
+
+        .b {
             display: flex;
             justify-content: center;
-            align-items: center; 
-            margin-top: 10px;
-            
-       }
-       .b img{
+            gap: 5%;
+            margin: 2rem 0;
+        }
+
+        .b img {
             width: 100px;
             height: 100px;
-            margin: 0 50px; 
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
 
-            border-radius: 50px;
-            margin-bottom: 20px;
+        .gunneng {
+            width: 95%;
+            max-width: 1000px;
+            margin: 0rem auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2%;
+        }
 
-       }
-       .gunneng{
-            margin-top: 30px; 
-            width: 1000px;
-            height: 300px;  
-            margin-left: 180px;
-            display: flex; /* 使用flex布局 */
-            justify-content: space-between; /* 在元素之间平均分配空间 */
-       }
-       .part1{
-        height: 270px;
-        background-image: url(part1.png); 
-        width: 200px;
-        background-size: cover;
-        border: 2px solid white;
-        background-position: center center;
-        border-radius: 20px; 
-        font-size: 30px;
-        color: #3fc2ff;
-        text-align: center;
-        writing-mode: vertical-rl;
-        font-family:'幼圆';
-        font-weight: bold;
-        
+        .gunneng button {
+    flex: 1;
+    min-width: 200px;
+    max-width: 240px;
+    height: 270px;
+    margin: 1rem 0;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 0; /* 确保没有内边距影响图片显示 */
+}
 
-       }
-       .part2{
-        height: 270px; 
-        background-image: url(part2.png); 
-        width: 200px;
-        background-size: cover;
-        border: 2px solid white;
-        background-position: center center;
-        border-radius: 20px;
-        font-size: 30px;
-        color: gold;
-        text-align: center;
-        writing-mode: vertical-rl;
-        font-family:'幼圆';
-        font-weight: bold;
-        
-       }
-       
-       .part3{
-        height: 270px; 
-        background-image: url(part3.png);  
-        width: 200px;
-        background-size: cover;
-        border: 2px solid white;
-        background-position: center center;
-        border-radius: 20px;
-        font-size: 30px;
-        color: fuchsia;
-        text-align: center;
-        writing-mode: vertical-rl;
-        font-family:'幼圆';
-        font-weight: bold;
-       }
 
-    .part4{
-        height: 270px; 
-        background-image: url(part4.png);  
-        width: 200px;
-        background-size: cover;
-        border: 2px solid white;
-        background-position: center center;
-        border-radius: 20px;
-        font-size: 30px;
-        color: hotpink;
-        text-align: center;
-        writing-mode: vertical-rl;
-        font-family:'幼圆';
-        font-weight: bold;
-       }
+        /* 不同part的样式 */
+        .part1 { background-image: url(part1.png); color: #00000000; }
+        .part2 { background-image: url(part2.png); color: rgba(255, 217, 0, 0); }
+        .part3 { background-image: url(part3.png); color: rgba(255, 0, 255, 0); }
+        .part4 { background-image: url(part4.png); color: rgba(255, 105, 180, 0); }
+
+        /* 媒体查询 */
+        @media (max-width: 768px) {
+            .b {
+                
+                align-items: center;
+                width: 100%;
+            }
+
+            .gunneng {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem; /* 增加按钮间距 */
+            }
+            
+            .gunneng button {
+            width: 90%;
+            max-width: 300px;
+            height: 120px; /* 更适合移动端的高度 */
+            margin: 0 0; /* 调整间距 */
+    }
+        }
+
+        @media (hover: hover) {
+            .gunneng button:hover {
+                transform: translateY(-5px);
+            }
+        }
+      
     </style>
 </head>
 <body>
@@ -178,8 +173,7 @@
             
             <img src="./2.jpg" alt="">
             </div>
-        
-        <p id="hours-passed"></p>
+            <p id="hours-passed"></p>
         
         
         <script>
@@ -205,10 +199,13 @@
         </div>
 
         <div class="gunneng">
-            <button class="part1" onclick="window.open('part1.html', '_blank')"></button>
-            <button class="part2" onclick="window.open('part2.html', '_blank')"></button>
-            <button class="part3" onclick="window.open('part3.html', '_blank')"></button>
-            <button class="part4" onclick="window.open('part4.html', '_blank')"></button>
+            <button class="part1" onclick="window.open('part1.html', '_blank')">你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</button>
+            <button class="part2" onclick="window.open('part2.html', '_blank')">你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</button>
+            <button class="part3" onclick="window.open('part3.html', '_blank')">你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</button>
+            <button class="part4" onclick="window.open('part4.html', '_blank')">你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好</button>
         </div>
+    
+        
+    </script>
 </body>
 </html>

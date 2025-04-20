@@ -1,133 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>浪漫之旅</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
-        }
-        body{
-            margin: 0;
-            padding: 0;
-            background-image: url(./beijing1.jpg);
-            width: 1080px;
-            height: 620px;
-            background-size: cover; /* 这将使背景图片覆盖整个元素 */
-            background-repeat: no-repeat; /* 防止图片重复 */
-            background-position: center center; /* 将图片居中 */
-
-        }
-        h1 {
-            font-size: 40px;
-            margin-top: 140px;
-            margin-left: 480px;
-            color: #ffffff;
-            }
-        h2{
-            font-size:30px;
-            margin-top: 20px;
-            margin-left: 510px;
-            color: #ffffff;
-
+            box-sizing: border-box;
         }
 
-       
-        input{
-            margin-left: 580px;
-            margin-top: 70px;
-            height: 40px;
-            width: 150px;
-            border-radius: 20px; /* 添加圆角 */
+        body {
+            min-height: 100vh;
+            background: url(./beijing1.jpg) no-repeat center center/cover;
+            font-family: "Microsoft YaHei", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
             text-align: center;
-            font-size: 30px;
+            margin-top: 17vh;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        
-        .yiyan{
-            margin-top: 80px;
-            margin-left: 550px;
-            
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-        .yiyan p{
-            font-size: 15px;
-            color: #ffffff;
+
+        h2 {
+            font-size: 1.5rem;
+            opacity: 0.9;
         }
+
+        .password-input {
+            margin: 10vh 0;
+            position: relative;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .yiyan {
+            margin-top: auto;
+            margin-bottom: 5vh;
+            text-align: center;
+            min-height: 100px;
+            width: 80%;
+        }
+        .yiyan p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+        }
+
+        #contentContainer {
+            position: relative;
+            height: 80px;
+        }
+
         #contentContainer p {
-           
-            font-size: 25px; /* 你可以根据需要更改字号大小 */
-            color: #ffffff; /* 你可以根据需要更改文本颜色 */
-        } 
-        
+            position: absolute;
+            width: 100%;
+            font-size: 1.1rem;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 1s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        #contentContainer p.active {
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body>
-  <h1>输入我们的专属密码</h1>
-  <h2>让我们开始浪漫之旅吧~</h2>
- 
-  
+    <div class="header">
+        <h1>输入我们的专属密码</h1>
+        <h2>让我们开始浪漫之旅吧~</h2>
+    </div>
 
-    <input type="password" id="passwordInput" placeholder="">
-    <script>
-      // 获取输入框元素
-      var passwordInput = document.getElementById("passwordInput");
+    <div class="password-input">
+        <input type="password" id="passwordInput" placeholder="输入密码吧~">
+    </div>
 
-      // 监听输入框的input事件
-      passwordInput.addEventListener("input", function() {
-          var password = passwordInput.value;
-          if (password === "412117") {
-              window.location.href = "xihuan.html"; // 跳转到成功页面
-          }
-      });
-    </script>
-
-<div class="yiyan">
-    <p>有话要说：</p>
-  <div id="contentContainer">
-    <p id="content1">  遇见你，是我的小幸运    </p>
-    <p id="content2">喜欢你，我的世界只有你一人</p>
-    <p id="content3">    我眼睛的焦点只有你    </p>
+    <div class="yiyan">
+        <p>有话要说：</p>
+        <div id="contentContainer">
+            <p class="active">遇见你，是我的小幸运</p>
+            <p>喜欢你，我的世界只有你一人</p>
+            <p>我眼睛的焦点只有你</p>
+        </div>
     </div>
 
     <script>
-    // 定义一个数组来存储要显示的内容
-      var contents = [
-        document.getElementById("content1"),
-        document.getElementById("content2"),
-        document.getElementById("content3")
-    ];
-
-    // 定义一个变量来跟踪当前显示的内容索引
-    var currentIndex = 0;
-
-    // 定义一个函数来轮换显示内容
-    function rotateContent() {
-        // 隐藏所有内容
-        contents.forEach(function(content) {
-            content.style.display = "none";
+        // 密码验证功能
+        const passwordInput = document.getElementById('passwordInput');
+        
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && passwordInput.value === "412117") {
+                window.location.href = "xihuan.html";
+            }
         });
 
-        // 显示当前索引对应的内容
-        contents[currentIndex].style.display = "block";
+        // 文字轮播功能
+        const contents = document.querySelectorAll('#contentContainer p');
+        let currentIndex = 0;
 
-        // 更新当前索引
-        currentIndex = (currentIndex + 1) % contents.length;
-    }
+        function rotateContent() {
+            contents[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % contents.length;
+            contents[currentIndex].classList.add('active');
+        }
 
-    // 页面加载时调用rotateContent函数一次
-    window.onload = function() {
-        rotateContent();
-    };
+        // 初始化轮播
+        setInterval(rotateContent, 3000);
 
-    // 每隔3秒调用一次rotateContent函数
-    setInterval(rotateContent, 5000);
-  
+        // 添加简单的输入反馈
+        passwordInput.addEventListener('input', () => {
+            if (passwordInput.value.length > 6) {
+                passwordInput.value = passwordInput.value.slice(0, 6);
+            }
+        });
     </script>
-  
-</div> 
-
 </body>
 </html>
