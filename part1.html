@@ -1,60 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>牢记于心榜</title>
     <style>
-    *{
-        margin: 0;
-        padding: 0;
+    :root {
+        --primary-color: rgba(255, 255, 255, 0.9);
+        --font-kaiti: "楷体", "Kaiti", "STKaiti", serif;
     }
-    body{
-        margin: 0;
-        padding: 0;
-        background-image: url(./beijing3.png);
-        width: 1080px;
-        height: 575px;
-        background-size: cover; /* 这将使背景图片覆盖整个元素 */
-        background-repeat: no-repeat; /* 防止图片重复 */
-        background-position: center center; /* 将图片居中 */
 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-    h1{
-        font-family: '楷体';
-        margin-left:580px;
-        font-size: 40px;
-        margin-top: 50px;
-        color: #ffffff;
-        margin-bottom: 100px;
+
+    body {
+        min-height: 100vh;
+        background: url(./beijing3.png) no-repeat center/cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        font-family: var(--font-kaiti);
+        color: var(--primary-color);
     }
-    
-    p{
-        font-family: '楷体';
-        margin-left: 570px;
-        font-size: 30px;
-        margin-top: 40px;
-       color: #ffffff;
+
+    header {
+        text-align: center;
+        margin-bottom: 7rem;
     }
-   
-    
-   
-    h2{
-        font-family: '楷体';
-        margin-left: 370px;
-        font-size: 20px; 
-        margin-top: 70px;
-        color: #ffffff;
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 11rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1rem;
+    }
+
+    .promise-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .promise-item {
+        font-size: 1.7rem;
+        text-align: center;
+        line-height: 1.6;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+        margin-top: auto;
+        padding: 2rem 0;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 3rem;
+        }
+        
+        .promise-item {
+            font-size: 2rem;
+        }
     }
     </style>
 </head>
 <body>
-    <h1>牢记于心榜</h1>
-    <p>对你多一份真诚</p>
-    <p>对你多一份关心</p>
-    <p>对你多一份理解</p>
-    <p>对你多一份温柔</p>
-   
+    <header>
+        <h1>牢记于心榜</h1>
+    </header>
+    
+    <main class="main-content">
+        <div class="promise-list">
+            <p class="promise-item">对你多一份真诚</p>
+            <p class="promise-item">对你多一份关心</p>
+            <p class="promise-item">对你多一份理解</p>
+            <p class="promise-item">对你多一份温柔</p>
+        </div>
+    </main>
 
+    <footer>
+        <p>—— 我会做到的，喜欢你 ——</p>
+    </footer>
 </body>
 </html>
