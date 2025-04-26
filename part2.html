@@ -1,158 +1,543 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>我们的恋爱日记</title>
     <style>
-        *{
-        margin: 0;
-        padding: 0;
-    }
-    body{
-        margin: 0;
-        padding: 0;
-        background-image: url(./beijing4.png);
-        width: 1080px;
-        height: 635px;
-        background-size: cover; /* 这将使背景图片覆盖整个元素 */
-        background-repeat: no-repeat; /* 防止图片重复 */
-        background-position: center center; /* 将图片居中 */
+        :root {
+            --primary-color: rgba(255, 255, 255, 0.85);
+            --container-bg: rgba(255, 255, 255, 0.3);
+        }
 
-    }
-    h3{
-        color: #ffffff;
-        text-align: center;
-        font-family:'幼圆'; 
-        font-size: 36px;
-        margin-left: 280px;
-        margin-bottom: 30px;
-        margin-top: 50px;
-       }
-    .rongqi{
-        width: 720px;
-        height: 520px;
-        background-color: #ffffff4c;
-        margin-left: 330px;
-        border-radius: 10px;
-        overflow: auto; /* 添加这一行来显示滚动条 */
-        scrollbar-width: none;
-       }
-       
-    .rongqi p{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        color: #332e2e;
-        margin-left: 40px;
-        font-family:'楷体';
-        font-size: 20px;
-        padding-top: 30px;
-        margin-right: 30px;
-       }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url(./beijing4.png) center/cover fixed;
+            font-family: '楷体', 'Microsoft YaHei', sans-serif;
+            padding: 20px;
+        }
+
+        .timeline-header {
+            text-align: center;
+            padding: 2rem 0;
+            animation: fadeInDown 1s;
+        }
+
+        .timeline-header h3 {
+            color: var(--primary-color);
+            font-family: '幼圆', 'Microsoft YaHei', cursive;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.038);
+            overflow-y: auto;
+            max-height: 70vh;
+        }
+
+        /* 自定义滚动条 */
+        .timeline-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .timeline-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.047);
+        }
+
+        .timeline-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1.5rem 2rem;
+            margin: 1rem 0;
+            background: rgba(255, 255, 255, 0.177);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.297);
+        }
+
+        .timeline-date {
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content {
+            color: var(--primary-color);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .ending-text {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1.2rem;
+            color: #ffd700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-header h3 {
+                font-size: 2rem;
+            }
+            
+            .timeline-container {
+                padding: 1rem;
+                max-height: 80vh;
+            }
+
+            .timeline-item {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    
-        
+    <header class="timeline-header">
         <h3>我们的恋爱日记</h3>
-        <div class="rongqi">
-            <p>2025年1月18日---我向你表白
-            <p>2025年1月19日---我们倾吐心声，QQ绑定情侣关系，更换情头</p>
-            <p>2025年1月20日---我们动态官宣，探讨哲学</p>
-            <p>2025年1月21日---我遇到了ma-y的考验</p>
-            <p>2025年1月22日---我为你表演魔术</p>
-            <p>2025年1月23日---这个网页1.0诞生，我们约定晚安</p>
-            <p>2025年1月24日---我们互倾心声，相互约定</p>
-            <p>2025年1月25日---我们玩了蛋仔派对，你整理了人机语录</p>
-            <p>2025年1月26日---我们获得了神仙眷侣称号，你对一件事很生气</p>
-            <p>2025年1月27日---你今年的最后一节课，你因为我的选择生气了</p>
-            <p>2025年1月28日---你因为我的不温柔而生气，而我也做了一件对不起你的事</p>
-            <p>2025年1月29日---我们一起看了电影《釜山行》，我们也玩了真心话大冒险</p>
-            <p>2025年1月30日---我上线了我们的网站，你做了最喜欢吃的火鸡面</p>
-            <p>2025年1月31日---你玩了密室逃脱，我给予你鼓励</p>
-            <p>2025年2月1日---你换了新手机，我从此不说一个数字</p>
-            <p>2025年2月2日---你翻了我的个签，你为一件事生气，我安慰了你</p>
-            <p>2025年2月3日---你展示了自己的荣誉，我们互换了角色</p>
-            <p>2025年2月4日---我给你写了一封告白信，你很开心</p>
-            <p>2025年2月5日---我们相互告白对方99次，你给我精心制作礼物</p>
-            <p>2025年2月6日---你织了小熊的一只腿，我蛋仔派对玩的很菜</p>
-            <p>2025年2月7日---你跳了随舞，我们假期第一次见面，我织了小熊，你买了情侣手绳</p>
-            <p>2025年2月8日---我们养了suki,我开始更新网站</p>
-            <p>2025年2月9日---我们的suki考了20分，我拍了不合调的手势舞</p>
-            <p>2025年2月10日---我们一起看了电影，一起逛街，我们带上了情侣手绳，你给我带美甲，给我拍照</p>
-            <p>2025年2月11日---今天我起的很晚，你很伤心，我们互倾心声，我对你说话语气不好，你伤心了</p>
-            <p>2025年2月12日---我们一起出去玩，我们看了社火，去了东湖公园，抓了糖果，牵了手，拍了合照</p>
-            <p>2025年2月13日---我们一起规划到学校的相处，我惹得你很生气，不理我了，但最后原谅我了</p>
-            <p>2025年2月14日---在情人节，我给你叠了一个纸玫瑰，你很高兴，我们一起打王者</p>
-            <p>2025年2月15日---我们打了王者，挺平淡的一天</p>
-            <p>2025年2月16日---我给你讲了我的故事，你看了哪吒二刷</p>
-            <p>2025年2月17日---你用王者给我打出来521，我很开心</p>
-            <p>2025年2月18日---我们聊了很多，我意识到我是焦虑型依恋人格，我要慢慢改过来，我给你做了名片</p>
-            <p>2025年2月19日---你因为一些事情很生气，你到了离我家最近的一次</p>
-            <p>2025年2月20日---你去了滑雪场，还给我拍了视频，特别帅</p>
-            <p>2025年2月21日---我们一起为补作业而着急</p>
-            <p>2025年2月22日---我们一起去了自习室，帮你补完英语作业，一起吃了火鸡面，一起选课，一起王者单挑</p>
-            <p>2025年2月23日---我们到了学校，一起度过在学校的第一个晚自习</p>
-            <p>2025年2月24日---我们第一次一起去吃饭，考了开学考试</p>
-            <p>2025年2月25日---我们一起去吃饭，我坐到了女生那桌，你感到很尴尬</p>
-            <p>2025年2月26日---我们并排跑操，你被罚打扫卫生，我陪你一起打扫</p>
-            <p>2025年2月27日---我们一起上了艺术选修，我们找不到教室</p>
-            <p>2025年2月28日---我们一起在学校写作业，和其他同学聊的很开心，晚上还送你了一程</p>
-            <p>2025年3月1日---你和家里人产生了让你委屈的事，你出去了，我在学校，不能来陪你</p>
-            <p>2025年3月2日---我们一起出去打了台球，送你回了家，你给了我皮筋</p>
-            <p>2025年3月3日---我们一起上了技修，玩的很开心，晚上给你说了一些话，让你很委屈</p>
-            <p>2025年3月4日---这一天上午和下午你因为昨天的是不愿理我，晚上我向你解释，你理我了</p>
-            <p>2025年3月5日---我们一起打扫卫生，你教我唱歌，你让我帮忙通知一件事情，我办砸了</p>
-            <p>2025年3月6日---你要开会，没有吃饭，我给你买了燕麦豆浆</p>
-            <p>2025年3月7日---我因为打游戏而没有及时回你消息，刘昱辰找到我，希望你可以原谅他</p>
-            <p>2025年3月8日---我买了一个耳机，你写了一部小说，特别好看</p>
-            <p>2025年3月9日---我们发生了关于周日到校时间的误会</p>
-            <p>2025年3月10日---我们技修时拉手，我特别开心，晚自习也拉了手</p>
-            <p>2025年3月11日---你又给我了一个绿色的皮筋，化学课坐在一起，感到我们有些危险了</p>
-            <p>2025年3月12日---我度过了一个最难熬的英语课，因为你的皮筋都被我拿走了，你体修没有皮筋戴</p>
-            <p>2025年3月13日---我数学课给你递东西是扔过去的，你逗我玩，假装不高兴</p>
-            <p>2025年3月14日---我们早上一起打一把伞，那天晚自习我很伤心，你也不高兴</p>
-            <p>2025年3月15日---早上我很难过，中午我们一起沟通，解决了一些问题，让我们用新的方式去相处</p>
-            <p>2025年3月16日---我们一起去学校，我打车没有通知你，没有买喝的，晚上你被通报了，被罚打扫卫生</p>
-            <p>2025年3月17日---我给你扎了头发，你因为委屈而哭泣</p>
-            <p>2025年3月18日---你摔倒了，腿摔肿了，哭的很伤心</p>
-            <p>2025年3月19日---你听力时被通报了，这几天你每天都很倒霉</p>
-            <p>2025年3月20日---我们一起唱谱，你给我教怎么唱</p>
-            <p>2025年3月21日---我陪你一起回家，遗憾没有一起吃饭</p>
-            <p>2025年3月22日---今天你身体很不舒服</p>
-            <p>2025年3月23日---你说你这周要开始瘦身</p>
-            <p>2025年3月24日---我们一起上了技修，看到了奇怪的事情</p>
-            <p>2025年3月25日---我们一起复习，刘昱辰看到了我们的小动作</p>
-            <p>2025年3月26日---我们考了月考，你很担心你的化学</p>
-            <p>2025年3月27日---你的英语考的不好，你给我涂指甲，擦不下来</p>
-            <p>2025年3月28日---你睡过头了，你答应和我一起出去玩</p>
-            <p>2025年3月29日---我们一起去了陇东学院，我没有听你的话，天很冷，手势舞没有拍成</p>
-            <p>2025年3月30日---我在deepseek这件事上欺骗了你，我给你买了水溶，你因为手环的事而生气</p>
-            <p>2025年3月31日---你开玩笑说你不想谈恋爱，我给你讲题我没有讲懂</p>
-            <p>2025年4月1日---我想调班被秦向阳拒绝，你因为我吃饭没有理你而不高兴</p>
-            <p>2025年4月2日---你请假去看病，你说我是臭的，希望我是香香的</p>
-            <p>2025年4月3日---你的手链断了，你回家后因为家里的事而特别难过，眼睛都哭肿了</p>
-            <p>2025年4月4日---这一天我买了新鞋新裤子，你说我的新裤子不好看</p>
-            <p>2025年4月5日---我们一起打了台球，你赢了我好多次，你跳完舞特别累</p>
-            <p>2025年4月6日---你收到了风铃的生日礼物，你取快递时很倒霉</p>
-            <p>2025年4月7日---我没有记清我们开始恋爱的时间，我没有开会和你一起上技修，你讨厌一个人</p>
-            <p>2025年4月8日---你获得了进步之星，我获得了班级前十</p>
-            <p>2025年4月9日---我因为吃饭太慢，让你被罚打扫卫生，向班里走的时候没有更上你，我告诉了你生日礼物</p>
-            <p>2025年4月10日---你收到了很贵重的生日礼物，艺修我们在班里也玩的很开心</p>
-            <p>2025年4月11日---我因为讲题没有讲懂，你很不高兴，我给你做了电子生日贺卡，你特别喜欢</p>
-            <p>2025年4月12日---今天是你的生日，我和你一起出去，我送你了一束好看的花，你拆封你的礼物，我特别害怕蜘蛛，我们关联了QQ</p>
-            <p>2025年4月13日---你收到了玩偶作为礼物，你把玩偶给我晚上抱着睡，你用我的qq发了好多动态，给别人开玩笑说我们分手了</p>
-            <p>2025年4月14日---你技修时靠着我睡，我让你靠的很不舒服，你拿走了我的笔袋，你的嗓子很疼</p>
-            <p>2025年4月15日---你给我涂了口红，体育课时你嗓子很痛，我陪你一起去教室</p>
-            <p>2025年4月16日---你因为一个讨厌的人而生气，吃完饭我等你一起走</p>
-            <p>2025年4月17日---我因为吃完饭没等你，让你一个人走，你很生气，你开玩笑说要分手，我们玩闹时番茄酱沾到我衣服上了</p>
-            <p>2025年4月18日---你因为我的乱想和胡说而生气</p>
-            <p>2025年4月19日---今天我们一起出去，一起吃蛋糕，拍了视频，王者单挑，给你把表弄好，你因为我的执着而不高兴</p>
-        
-
-            <p>别急,美好的事情正在发生......</p>
-            <p></p>
-            <p></p>
+    </header>
+    
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月18日</div>
+            <div class="timeline-content">我向你表白</div>
         </div>
-   
+
+        
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月19日</div>
+            <div class="timeline-content">我们倾吐心声，QQ绑定情侣关系，更换情头</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月20日</div>
+            <div class="timeline-content">我们动态官宣，探讨哲学</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月21日</div>
+            <div class="timeline-content">我遇到了ma-y的考验</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月22日</div>
+            <div class="timeline-content">我为你表演魔术</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月23日</div>
+            <div class="timeline-content">这个网页1.0诞生，我们约定晚安</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月24日</div>
+            <div class="timeline-content">我们互倾心声，相互约定</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月25日</div>
+            <div class="timeline-content">我们玩了蛋仔派对，你整理了人机语录</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月26日</div>
+            <div class="timeline-content">我们获得了神仙眷侣称号，你对一件事很生气</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月27日</div>
+            <div class="timeline-content">你今年的最后一节课，你因为我的选择生气了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月28日</div>
+            <div class="timeline-content">你因为我的不温柔而生气，而我也做了一件对不起你的事</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月29日</div>
+            <div class="timeline-content">我们一起看了电影《釜山行》，我们也玩了真心话大冒险</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月30日</div>
+            <div class="timeline-content">我上线了我们的网站，你做了最喜欢吃的火鸡面</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年1月31日</div>
+            <div class="timeline-content">你玩了密室逃脱，我给予你鼓励</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月1日</div>
+            <div class="timeline-content">你换了新手机，我从此不说一个数字</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月2日</div>
+            <div class="timeline-content">你翻了我的个签，你为一件事生气，我安慰了你</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月3日</div>
+            <div class="timeline-content">你展示了自己的荣誉，我们互换了角色</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月4日</div>
+            <div class="timeline-content">我给你写了一封告白信，你很开心</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月5日</div>
+            <div class="timeline-content">我们相互告白对方99次，你给我精心制作礼物</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月6日</div>
+            <div class="timeline-content">你织了小熊的一只腿，我蛋仔派对玩的很菜</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月7日</div>
+            <div class="timeline-content">你跳了随舞，我们假期第一次见面，我织了小熊，你买了情侣手绳</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月8日</div>
+            <div class="timeline-content">我们养了suki,我开始更新网站</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月9日</div>
+            <div class="timeline-content">我们的suki考了20分，我拍了不合调的手势舞</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月10日</div>
+            <div class="timeline-content">我们一起看了电影，一起逛街，我们带上了情侣手绳，你给我带美甲，给我拍照</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月11日</div>
+            <div class="timeline-content">今天我起的很晚，你很伤心，我们互倾心声，我对你说话语气不好，你伤心了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月12日</div>
+            <div class="timeline-content">我们一起出去玩，我们看了社火，去了东湖公园，抓了糖果，牵了手，拍了合照</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月13日</div>
+            <div class="timeline-content">我们一起规划到学校的相处，我惹得你很生气，不理我了，但最后原谅我了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月14日</div>
+            <div class="timeline-content">在情人节，我给你叠了一个纸玫瑰，你很高兴，我们一起打王者</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月15日</div>
+            <div class="timeline-content">我们打了王者，挺平淡的一天</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月16日</div>
+            <div class="timeline-content">我给你讲了我的故事，你看了哪吒二刷</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月17日</div>
+            <div class="timeline-content">你用王者给我打出来521，我很开心</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月18日</div>
+            <div class="timeline-content">我们聊了很多，我意识到我是焦虑型依恋人格，我要慢慢改过来，我给你做了名片</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月19日</div>
+            <div class="timeline-content">你因为一些事情很生气，你到了离我家最近的一次</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月20日</div>
+            <div class="timeline-content">你去了滑雪场，还给我拍了视频，特别帅</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月21日</div>
+            <div class="timeline-content">我们一起为补作业而着急</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月22日</div>
+            <div class="timeline-content">我们一起去了自习室，帮你补完英语作业，一起吃了火鸡面，一起选课，一起王者单挑</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月23日</div>
+            <div class="timeline-content">我们到了学校，一起度过在学校的第一个晚自习</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月24日</div>
+            <div class="timeline-content">我们第一次一起去吃饭，考了开学考试</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月25日</div>
+            <div class="timeline-content">我们一起去吃饭，我坐到了女生那桌，你感到很尴尬</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月26日</div>
+            <div class="timeline-content">我们并排跑操，你被罚打扫卫生，我陪你一起打扫</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月27日</div>
+            <div class="timeline-content">我们一起上了艺术选修，我们找不到教室</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年2月28日</div>
+            <div class="timeline-content">我们一起在学校写作业，和其他同学聊的很开心，晚上还送你了一程</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月1日</div>
+            <div class="timeline-content">你和家里人产生了让你委屈的事，你出去了，我在学校，不能来陪你</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月2日</div>
+            <div class="timeline-content">我们一起出去打了台球，送你回了家，你给了我皮筋</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月3日</div>
+            <div class="timeline-content">我们一起上了技修，玩的很开心，晚上给你说了一些话，让你很委屈</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月4日</div>
+            <div class="timeline-content">这一天上午和下午你因为昨天的是不愿理我，晚上我向你解释，你理我了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月5日</div>
+            <div class="timeline-content">我们一起打扫卫生，你教我唱歌，你让我帮忙通知一件事情，我办砸了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月6日</div>
+            <div class="timeline-content">你要开会，没有吃饭，我给你买了燕麦豆浆</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月7日</div>
+            <div class="timeline-content">我因为打游戏而没有及时回你消息，刘昱辰找到我，希望你可以原谅他</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月8日</div>
+            <div class="timeline-content">我买了一个耳机，你写了一部小说，特别好看</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月9日</div>
+            <div class="timeline-content">我们发生了关于周日到校时间的误会</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月10日</div>
+            <div class="timeline-content">我们技修时拉手，我特别开心，晚自习也拉了手</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月11日</div>
+            <div class="timeline-content">你又给我了一个绿色的皮筋，化学课坐在一起，感到我们有些危险了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月12日</div>
+            <div class="timeline-content">我度过了一个最难熬的英语课，因为你的皮筋都被我拿走了，你体修没有皮筋戴</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月13日</div>
+            <div class="timeline-content">我数学课给你递东西是扔过去的，你逗我玩，假装不高兴</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月14日</div>
+            <div class="timeline-content">我们早上一起打一把伞，那天晚自习我很伤心，你也不高兴</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月15日</div>
+            <div class="timeline-content">早上我很难过，中午我们一起沟通，解决了一些问题，让我们用新的方式去相处</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月16日</div>
+            <div class="timeline-content">我们一起去学校，我打车没有通知你，没有买喝的，晚上你被通报了，被罚打扫卫生</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月17日</div>
+            <div class="timeline-content">我给你扎了头发，你因为委屈而哭泣</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月18日</div>
+            <div class="timeline-content">你摔倒了，腿摔肿了，哭的很伤心</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月19日</div>
+            <div class="timeline-content">你听力时被通报了，这几天你每天都很倒霉</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月20日</div>
+            <div class="timeline-content">我们一起唱谱，你给我教怎么唱</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月21日</div>
+            <div class="timeline-content">我陪你一起回家，遗憾没有一起吃饭</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月22日</div>
+            <div class="timeline-content">今天你身体很不舒服</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月23日</div>
+            <div class="timeline-content">你说你这周要开始瘦身</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月24日</div>
+            <div class="timeline-content">我们一起上了技修，看到了奇怪的事情</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月25日</div>
+            <div class="timeline-content">我们一起复习，刘昱辰看到了我们的小动作</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月26日</div>
+            <div class="timeline-content">我们考了月考，你很担心你的化学</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月27日</div>
+            <div class="timeline-content">你的英语考的不好，你给我涂指甲，擦不下来</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月28日</div>
+            <div class="timeline-content">你睡过头了，你答应和我一起出去玩</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月29日</div>
+            <div class="timeline-content">我们一起去了陇东学院，我没有听你的话，天很冷，手势舞没有拍成</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月30日</div>
+            <div class="timeline-content">我在deepseek这件事上欺骗了你，我给你买了水溶，你因为手环的事而生气</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年3月31日</div>
+            <div class="timeline-content">你开玩笑说你不想谈恋爱，我给你讲题我没有讲懂</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月1日</div>
+            <div class="timeline-content">我想调班被秦向阳拒绝，你因为我吃饭没有理你而不高兴</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月2日</div>
+            <div class="timeline-content">你请假去看病，你说我是臭的，希望我是香香的</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月3日</div>
+            <div class="timeline-content">你的手链断了，你回家后因为家里的事而特别难过，眼睛都哭肿了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月4日</div>
+            <div class="timeline-content">这一天我买了新鞋新裤子，你说我的新裤子不好看</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月5日</div>
+            <div class="timeline-content">我们一起打了台球，你赢了我好多次，你跳完舞特别累</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月6日</div>
+            <div class="timeline-content">你收到了风铃的生日礼物，你取快递时很倒霉</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月7日</div>
+            <div class="timeline-content">我没有记清我们开始恋爱的时间，我没有开会和你一起上技修，你讨厌一个人</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月8日</div>
+            <div class="timeline-content">你获得了进步之星，我获得了班级前十</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月9日</div>
+            <div class="timeline-content">我因为吃饭太慢，让你被罚打扫卫生，向班里走的时候没有更上你，我告诉了你生日礼物</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月10日</div>
+            <div class="timeline-content">你收到了很贵重的生日礼物，艺修我们在班里也玩的很开心</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月11日</div>
+            <div class="timeline-content">我因为讲题没有讲懂，你很不高兴，我给你做了电子生日贺卡，你特别喜欢</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月12日</div>
+            <div class="timeline-content">今天是你的生日，我和你一起出去，我送你了一束好看的花，你拆封你的礼物，我特别害怕蜘蛛，我们关联了QQ</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月13日</div>
+            <div class="timeline-content">你收到了玩偶作为礼物，你把玩偶给我晚上抱着睡，你用我的qq发了好多动态，给别人开玩笑说我们分手了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月14日</div>
+            <div class="timeline-content">你技修时靠着我睡，我让你靠的很不舒服，你拿走了我的笔袋，你的嗓子很疼</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月15日</div>
+            <div class="timeline-content">你给我涂了口红，体育课时你嗓子很痛，我陪你一起去教室</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月16日</div>
+            <div class="timeline-content">你因为一个讨厌的人而生气，吃完饭我等你一起走</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月17日</div>
+            <div class="timeline-content">我因为吃完饭没等你，让你一个人走，你很生气，你开玩笑说要分手，我们玩闹时番茄酱沾到我衣服上了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月18日</div>
+            <div class="timeline-content">你因为我的乱想和胡说而生气</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月19日</div>
+            <div class="timeline-content">今天我们一起出去，一起吃蛋糕，拍了视频，王者单挑，给你把表弄好，你因为我的执着而不高兴</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月20日</div>
+            <div class="timeline-content">你今天肚子特别疼，疼晕了好几次，我没有看qq让你很生气，我给你唱歌，你晚上请假了</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月21日</div>
+            <div class="timeline-content">你碰我的背和脖子，我特别痒，你因为一个人和我之前的不作为而生气</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月22日</div>
+            <div class="timeline-content">你的亲人去世了，你要住在宿舍，你很害怕，我拿手机陪着你</div>
+        </div>
+       
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月23日</div>
+            <div class="timeline-content">有人说我们是四爱，你说我不主动，我一直驼背，你很不高兴</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月24日</div>
+            <div class="timeline-content">没有上艺修，陪你一起写作业，早上在宿舍等你，你下午回了老家</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025年4月25日</div>
+            <div class="timeline-content">我下午等你一起回家，你告诉我不要搂你，我们谈了到大学的事，你倾诉老家的生气事，我发现我现在是爱你</div>
+        </div>
+        <div class="ending-text">
+            别急,美好的事情正在发生......
+
+
+        </div>
+    </div>
 </body>
 </html>

@@ -1,44 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="甜美相册 - 安全私密的照片存储解决方案">
     
     <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 全屏背景设置 */
         body {
-            
-        margin: 0;
-        padding: 0;
-        background-image: url(./beijing5.png);
-       
-        height: 635px;
-        background-size: cover; /* 这将使背景图片覆盖整个元素 */
-        background-repeat: no-repeat; /* 防止图片重复 */
-        background-position: center center; /* 将图片居中 */    
+            min-height: 100vh;
+            background: url(./beijing5.png) no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
         }
+
+        /* 文字内容容器 */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* 标题样式 */
         h1 {
-            color: #ffffff;
-        text-align: center;
-        font-family:'幼圆'; 
-        font-size: 36px;
-       
-        margin-bottom: 30px;
-        margin-top: 20px; 
+            color: #fff;
+            font-family: 'YouYuan', '幼圆', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem); /* 响应式字体大小 */
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+
+        /* 段落样式 */
         p {
-            color: #ffffff;
-        text-align: center;
-        font-family:'幼圆'; 
-        font-size: 20px;
-        margin-top: 300px; 
-        
+            color: #fff;
+            font-family: 'YouYuan', '幼圆', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
         }
-        
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            p {
+                margin-top: 1rem;
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>甜美相册</h1>
-    <p>为了保护我们的隐私不受侵犯，也为了你可以更加方便的查看，现在已经转移到QQ相册了呢</p>
-    
+    <div class="content">
+        <h1>甜美相册</h1>
+        <p>为了保护我们的隐私不受侵犯，也为了你可以更加方便的查看，现在已经转移到QQ相册了呢</p>
+    </div>
 </body>
 </html>
